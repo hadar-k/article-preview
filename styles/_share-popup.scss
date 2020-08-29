@@ -1,5 +1,5 @@
 #share-popup{
-    @include flexContainer(row, center);
+    @include flexContainer(row, flex-start);
     background-color: $VeryDarkGrayishBlue;
     width: 250px;
     height: 57px;
@@ -8,17 +8,21 @@
     opacity: 0;
 
     .share-title{
-        color: $LightGrayishBlue;
-        font-size: 13px;
+        color: $GrayishBlue;
+        font-size: 12px;
         letter-spacing: 7px;
+        padding-left: 38px;
     }
 
     .facebook{
         @include shareIcon(facebook);
+        margin-left: 15px;
+        margin-right: 18px;
     }
     .twitter{
         @include shareIcon(twitter);
         height: 17px;
+        margin-right: 17px;
     }
     .pinterest{
         @include shareIcon(pinterest);
@@ -28,7 +32,7 @@
         content: '';
         display: block;
         position: absolute;
-        left: 0;
+        left: 7px;
         right: 0;
         top: 50px;
         margin: 5px auto;
