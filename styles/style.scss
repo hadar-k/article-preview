@@ -1,28 +1,6 @@
-$primaryColor: rgb(174, 122, 204);
-
-$VeryDarkGrayishBlue: rgb(72, 85, 106);
-$DesaturatedDarkBlue: rgb(109, 127, 151);
-$GrayishBlue: rgb(158, 175, 194);
-$LightGrayishBlue: rgb(236, 242, 248);
-
-@mixin flexCenter($direction, $justification) {
-    display: flex;
-    justify-content: $justification;
-    align-items: center;
-    flex-direction: $direction;
-}
-
-@mixin center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-@mixin fitParent {
-    max-height: 100%;
-    max-width: 100%;
-}
+@import "./variables";
+@import "./mixins";
+@import "./share-popup";
 
 html{
     font-family: 'Manrope', sans-serif;
@@ -39,9 +17,9 @@ body{
 
 .article-component{
     @include center();
-    @include flexCenter(row, center);
-    width: 820px;
-    height: 312px;
+    @include flexContainer(row, center);
+    width: 732px;
+    height: 282px;
     border-radius: 5px;
     color: $VeryDarkGrayishBlue;
 
@@ -50,7 +28,7 @@ body{
     }
 
     .article-content-box{
-        @include flexCenter(column, space-between);
+        @include flexContainer(column, space-between);
         height: 100%;
         max-width: 100%;
         flex: 2;
@@ -60,35 +38,38 @@ body{
         .title{
             font-weight: 700;
             font-size: 21px;
-            padding: 50px 90px 0px 40px;
+            padding: 30px 50px 0px 40px;
         }
         .paragraph{
             font-weight: 500;
             font-size: 13px;
             color: $DesaturatedDarkBlue;
-            padding: 0px 90px 0px 40px;
+            padding: 0px 60px 0px 40px;
             line-height: 1.7;
         }
         .author-box{
-            @include flexCenter(row, space-between);
-            width: 84%;
+            @include flexContainer(row, space-between);
+            width: 81%;
             padding-bottom: 25px;
 
             .author-photo{
                 width: 40px;
                 height: 40px;
-                background: url(./images/avatar-michelle.jpg);
+                background: url(/images/avatar-michelle.jpg);
                 background-position: 50% 50%;
                 background-size: cover;
                 border-radius: 50%;
             }
 
             .author-name-and-date{
-                @include flexCenter(column, space-between);
+                @include flexContainer(column, space-between);
                 font-size: 13px;
                 line-height: 1.6;
+                flex: 2;
+                padding-left: 15px;
 
                 .author-name{
+                    align-self: flex-start;
                     font-weight: 700;
                 }
                 .date{
@@ -112,7 +93,7 @@ body{
                     transform: translate(-50%, -50%);
                     width: 15px;
                     height: 13px;
-                    background: url(./images/icon-share.svg);
+                    background: url(/images/icon-share.svg);
                     background-position: 50% 50%;
                     background-size: cover;
                     border-radius: 50%;
@@ -125,7 +106,7 @@ body{
         //display: inline-block;
         width: 50%;
         height: 100%;
-        background: url(./images/drawers.jpg);
+        background: url(/images/drawers.jpg);
         background-position: 0% 0%;
         background-size: cover;
         border-radius: 10px 0px 0px 10px;
@@ -135,8 +116,6 @@ body{
 
 
 header{
-    
-    background: $primaryColor;
     button{
         background: $LightGrayishBlue;
         &:hover{

@@ -1,0 +1,24 @@
+@mixin flexContainer($direction, $justification) {
+    display: flex;
+    justify-content: $justification;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin fitParent {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+@mixin shareIcon($iconName) {
+    width: 20px;
+    height: 20px;
+    background: url('/images/icon-' + $iconName + '.svg');
+}

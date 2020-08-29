@@ -1,0 +1,41 @@
+#share-popup{
+    @include flexContainer(row, center);
+    background-color: $VeryDarkGrayishBlue;
+    width: 250px;
+    height: 57px;
+    border-radius: 11px;
+    transform: scale(1) translateX(calc(50vw + 178px)) translateY(calc(50vh - 4px));
+    opacity: 0;
+
+    .share-title{
+        color: $LightGrayishBlue;
+        font-size: 13px;
+        letter-spacing: 7px;
+    }
+
+    .facebook{
+        @include shareIcon(facebook);
+    }
+    .twitter{
+        @include shareIcon(twitter);
+        height: 17px;
+    }
+    .pinterest{
+        @include shareIcon(pinterest);
+    }
+
+    &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50px;
+        margin: 5px auto;
+        height: 0;
+        width: 0;
+        border-left: 14px solid transparent;
+        border-right: 14px solid transparent;
+        border-top: 14px solid $VeryDarkGrayishBlue;
+    }
+}
