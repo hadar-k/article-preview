@@ -1,3 +1,10 @@
+.show{
+    opacity: 1;
+}
+.hide{
+    opacity: 0;
+}
+
 #share-popup{
     @include flexContainer(row, flex-start);
     background-color: $VeryDarkGrayishBlue;
@@ -5,13 +12,22 @@
     height: 57px;
     border-radius: 11px;
     transform: scale(1) translateX(calc(50vw + 178px)) translateY(calc(50vh - 4px));
-    opacity: 0;
+    //opacity: 0;
+    /*
+    transform-origin:50% 0%;
+    transform:scale(0) translateY(-190px);
+    transition:.5s;
+    */
 
     .share-title{
         color: $GrayishBlue;
         font-size: 12px;
         letter-spacing: 7px;
         padding-left: 38px;
+
+        &:hover{
+            cursor: default;
+        }
     }
 
     .facebook{
