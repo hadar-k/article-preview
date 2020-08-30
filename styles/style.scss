@@ -85,18 +85,34 @@ body{
                 border-radius: 50%;
                 background: $LightGrayishBlue;
 
-                &::after{
-                    content: '';
+                &:hover{
+                    cursor: pointer;
+                    background: $DesaturatedDarkBlue !important;
+                }
+
+                &:hover #share-icon{
+                    background: url(/images/icon-share-active.svg);
+                }
+
+                #share-icon{//&::after{
+                    //content: '';
                     position: absolute;
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
                     width: 15px;
                     height: 13px;
-                    background: url(/images/icon-share.svg);
                     background-position: 50% 50%;
                     background-size: cover;
                     border-radius: 50%;
+                    image-rendering: pixelated;
+                }
+
+                .share-icon-idle{
+                    background: url(/images/icon-share.svg);
+                }
+                .share-icon-active{
+                    background: url(/images/icon-share-active.svg);
                 }
             }
         }
@@ -111,15 +127,5 @@ body{
         background-size: cover;
         border-radius: 10px 0px 0px 10px;
         flex: 1.27;
-    }
-}
-
-
-header{
-    button{
-        background: $LightGrayishBlue;
-        &:hover{
-            background: $GrayishBlue;
-        }
     }
 }
