@@ -4,6 +4,7 @@
 
 html{
     font-family: 'Manrope', sans-serif;
+    overflow: auto;
 }
 
 body{
@@ -13,6 +14,7 @@ body{
     width: 100vw;
     padding: 0;
     margin: 0;
+    overflow: auto;
 }
 
 .article-component{
@@ -22,9 +24,21 @@ body{
     height: 282px;
     border-radius: 5px;
     color: $VeryDarkGrayishBlue;
+    box-shadow: 5px 20px 70px -40px $GrayishBlue;
 
     img{
         @include fitParent();
+    }
+
+    .image{
+        //display: inline-block;
+        width: 50%;
+        height: 100%;
+        background: url(/images/drawers.jpg);
+        background-position: 0% 0%;
+        background-size: cover;
+        border-radius: 10px 0px 0px 10px;
+        flex: 1.27;
     }
 
     .article-content-box{
@@ -34,6 +48,7 @@ body{
         flex: 2;
         background-color: white;
         border-radius: 0px 10px 10px 0px;
+        cursor: default;
 
         .title{
             font-weight: 700;
@@ -47,85 +62,89 @@ body{
             padding: 0px 60px 0px 40px;
             line-height: 1.7;
         }
-        .author-box{
-            @include flexContainer(row, space-between);
-            width: 81%;
-            padding-bottom: 25px;
 
-            .author-photo{
-                width: 40px;
-                height: 40px;
-                background: url(/images/avatar-michelle.jpg);
-                background-position: 50% 50%;
-                background-size: cover;
-                border-radius: 50%;
-            }
+        .author-box-container{
+            width: 100%;
+            //margin-left: 10px;
 
-            .author-name-and-date{
-                @include flexContainer(column, space-between);
-                font-size: 13px;
-                line-height: 1.6;
-                flex: 2;
-                padding-left: 15px;
-
-                .author-name{
-                    align-self: flex-start;
-                    font-weight: 700;
-                }
-                .date{
-                    align-self: flex-start;
-                    color: $GrayishBlue;
-                }
-            }
-
-            .share{
-                width: 32px;
-                height: 32px;
-                position: relative;
-                border-radius: 50%;
-                background: $LightGrayishBlue;
-
-                &:hover{
-                    cursor: pointer;
-                    background: $DesaturatedDarkBlue !important;
-                }
-
-                &:hover #share-icon{
-                    background: url(/images/icon-share-active.svg);
-                }
-
-                #share-icon{//&::after{
-                    //content: '';
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 15px;
-                    height: 13px;
+            .author-box{
+                @include flexContainer(row, space-between);
+                width: 81%;
+                //padding-bottom: 25px;
+                padding: 0px 0px 19px 40px;
+                margin: 0px;
+    
+                .author-photo{
+                    width: 40px;
+                    height: 40px;
+                    background: url(/images/avatar-michelle.jpg);
                     background-position: 50% 50%;
                     background-size: cover;
                     border-radius: 50%;
-                    image-rendering: pixelated;
                 }
-
-                .share-icon-idle{
-                    background: url(/images/icon-share.svg);
+    
+                .author-name-and-date{
+                    @include flexContainer(column, space-between);
+                    font-size: 13px;
+                    line-height: 1.6;
+                    flex: 2;
+                    padding-left: 15px;
+    
+                    .author-name{
+                        align-self: flex-start;
+                        font-weight: 700;
+                    }
+                    .date{
+                        align-self: flex-start;
+                        color: $GrayishBlue;
+                    }
                 }
-                .share-icon-active{
-                    background: url(/images/icon-share-active.svg);
+    
+                .share{
+                    width: 32px;
+                    height: 32px;
+                    position: relative;
+                    border-radius: 50%;
+                    background: $LightGrayishBlue;
+    
+                    &:hover{
+                        cursor: pointer;
+                        background: $DesaturatedDarkBlue !important;
+                    }
+    
+                    &:hover #share-icon{
+                        background: url(/images/icon-share-active.svg);
+                    }
+    
+                    #share-icon{//&::after{
+                        //content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 15px;
+                        height: 13px;
+                        background-position: 50% 50%;
+                        background-size: cover;
+                        border-radius: 50%;
+                        image-rendering: pixelated;
+                    }
+    
+                    .share-icon-idle{
+                        background: url(/images/icon-share.svg);
+                    }
+                    .share-icon-active{
+                        background: url(/images/icon-share-active.svg);
+                    }
                 }
             }
         }
+
+
     }
 
-    .image{
-        //display: inline-block;
-        width: 50%;
-        height: 100%;
-        background: url(/images/drawers.jpg);
-        background-position: 0% 0%;
-        background-size: cover;
-        border-radius: 10px 0px 0px 10px;
-        flex: 1.27;
-    }
+
 }
+
+
+@import "./mobile";
