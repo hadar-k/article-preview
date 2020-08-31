@@ -1,8 +1,10 @@
 .show{
-    opacity: 1;
+    //opacity: 1;
+    @include flexContainer(row, flex-start);
 }
 .hide{
-    opacity: 0;
+    //opacity: 0;
+    display: none !important;
 }
 
 #share-popup{
