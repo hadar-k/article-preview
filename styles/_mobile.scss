@@ -14,8 +14,6 @@
 
         .article-content-box{
             @include flexContainer(column, space-between);
-            //height: 100%;
-            //max-width: 100%;
             flex: 1.5;
             border-radius: 0px 0px 10px 10px;
 
@@ -27,7 +25,6 @@
             }
             .paragraph{
                 font-weight: 500;
-                //font-size: 13px;
                 padding: 0px 37px 0px 35px;
                 line-height: 1.7;
             }
@@ -37,11 +34,9 @@
                 .author-box{
                     padding-top: 15px;
                     padding-bottom: 18px;
+                    width: 77%;
                 }
             }
-            
         }
     }
-
-
 }
