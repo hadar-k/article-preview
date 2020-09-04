@@ -1,18 +1,22 @@
 @keyframes fade-in {
     0% {
-        transform: translateX(calc(50vw + 178px)) translateY(calc(50vh + 54px)) scale(0);
+        //transform: translateX(calc(50vw + 178px)) translateY(calc(50vh + 54px)) scale(0);
+        @include share-popup-location(hide);
     }
    100% {
-        transform: translateX(calc(50vw + 178px)) translateY(calc(50vh - 4px)) scale(1);
+        //transform: translateX(calc(50vw + 178px)) translateY(calc(50vh - 4px)) scale(1);
+        @include share-popup-location(show);
    }
 }
 
 @keyframes fade-out {
     0% {
-        transform: translate(calc(50vw + 178px), calc(50vh - 4px)) scale(1);
+        //transform: translate(calc(50vw + 178px), calc(50vh - 4px)) scale(1);
+        @include share-popup-location(show);
     }
    100% {
-        transform: translate(calc(50vw + 178px), calc(50vh + 54px)) scale(0);
+        //transform: translate(calc(50vw + 178px), calc(50vh + 54px)) scale(0);
+        @include share-popup-location(hide);
    }
 }
 
@@ -20,15 +24,20 @@
     //opacity: 1;
     @include flexContainer(row, flex-start);
     //visibility: visible;
-    transform: translateX(calc(50vw + 178px)) translateY(calc(50vh - 4px));
-    animation: fade-in .5s ease ;
+    //transform: translateX(calc(50vw + 178px)) translateY(calc(50vh - 4px));
+    animation: fade-in .4s ease ;
+    //animation-fill-mode: forwards;
 }
 .hide{
     //opacity: 0;
     //display: none !important;
-    animation: fade-out .4s ease-out ;
+    animation: fade-out .3s ease-out ;
     animation-fill-mode: forwards;
     //visibility: hidden;
+}
+
+.invisible{
+    display: none !important;
 }
 
 #share-popup{
@@ -37,10 +46,10 @@
     width: 250px;
     height: 57px;
     border-radius: 11px;
-    //position: relative;
+    position: relative;
   
-    transform: translateX(calc(50vw + 178px)) translateY(calc(50vh - 4px));
-    //transition: all 2s ease-out;
+    //transform: translateX(calc(50vw + 178px)) translateY(calc(50vh - 4px));
+    @include share-popup-location(show);
 
     .share-title{
         color: $GrayishBlue;

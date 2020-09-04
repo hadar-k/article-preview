@@ -22,3 +22,12 @@
     height: 20px;
     background: url('/images/icon-' + $iconName + '.svg');
 }
+
+@mixin share-popup-location($visibility) {
+    @if $visibility == show {
+        transform: translate(103.5%, -245%) scale(1);
+    }
+    @else if $visibility == hide{
+        transform: translate(103.5%, -160%) scale(0);
+    }
+}
