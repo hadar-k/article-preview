@@ -3,10 +3,11 @@ function share(){
     var shareButton = document.getElementById("share-button");
     var shareIcon = document.getElementById("share-icon");
 
-    if (sharePopup.classList.contains("hide")) {
+    if (sharePopup.classList.contains("hide") || sharePopup.classList.contains("invisible")) {
         //sharePopup.style.opacity = 1;
         sharePopup.classList.add("show");
         sharePopup.classList.remove("hide");
+        sharePopup.classList.remove("invisible");
         shareButton.style.background = "rgb(109, 127, 151)"; //$DesaturatedDarkBlue
         shareIcon.classList.add("share-icon-active");
         shareIcon.classList.remove("share-icon-idle");
