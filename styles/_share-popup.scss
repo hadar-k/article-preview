@@ -1,4 +1,4 @@
-@keyframes fade-in {
+@keyframes rise-up {
     0% {
         //transform: translateX(calc(50vw + 178px)) translateY(calc(50vh + 54px)) scale(0);
         @include share-popup-location(hide);
@@ -9,13 +9,11 @@
    }
 }
 
-@keyframes fade-out {
+@keyframes shrink-down {
     0% {
-        //transform: translate(calc(50vw + 178px), calc(50vh - 4px)) scale(1);
         @include share-popup-location(show);
     }
    100% {
-        //transform: translate(calc(50vw + 178px), calc(50vh + 54px)) scale(0);
         @include share-popup-location(hide);
    }
 }
@@ -23,17 +21,14 @@
 .show{
     //opacity: 1;
     @include flexContainer(row, flex-start);
-    //visibility: visible;
-    //transform: translateX(calc(50vw + 178px)) translateY(calc(50vh - 4px));
-    animation: fade-in .4s ease ;
+    animation: rise-up .4s ease ;
     //animation-fill-mode: forwards;
 }
 .hide{
-    //opacity: 0;
+    
     //display: none !important;
-    animation: fade-out .3s ease-out ;
+    animation: shrink-down .3s ease ;
     animation-fill-mode: forwards;
-    //visibility: hidden;
 }
 
 .invisible{
