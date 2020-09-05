@@ -1,4 +1,4 @@
-@media screen and (max-width: $mobile-width){
+@media screen and (max-width: $mobile-size-limit){
     .article-component{
         @include flexContainer(column, center);
         width: 330px;
@@ -20,23 +20,70 @@
             .title{
                 font-weight: 700;
                 font-size: 16px;
-                padding: 35px 30px 0px 35px;
+                padding: 35px 30px 13px 35px;
                 line-height: 1.5;
             }
             .paragraph{
                 font-weight: 500;
-                padding: 0px 37px 0px 35px;
+                padding: 0px 37px 13px 35px;
                 line-height: 1.7;
             }
 
             .author-box-container{
-
                 .author-box{
                     padding-top: 15px;
                     padding-bottom: 18px;
                     width: 77%;
                 }
+
+                .share{
+                    top: 90.5%;
+                    left: 79%;
+                }
+            }
+
+            #share-popup{
+                position: absolute;
+                top: 118.5%;
+                left: -103.5%;
+                width: $mobile-screen-width;
+                height: 65px;
+                //border-radius: 0px 0px 11px 11px;
+                border-radius: 0px 0px 10px 10px;
+        
+                &::after{
+                    content: '';
+                    display: none;
+                }
             }
         }
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity:0;
+        }
+       100% {
+           opacity: 1;
+       }
+    }
+    
+    @keyframes fade-out {
+        0% {
+            opacity: 1;
+        }
+       100% {
+           opacity: 0;
+       }
+    }
+    
+    .show{
+        animation: fade-in .4s ease ;
+        animation-fill-mode: forwards;
+ 
+    }
+    .hide{
+        animation: fade-out .4s ease ;
+        animation-fill-mode: forwards;
     }
 }
