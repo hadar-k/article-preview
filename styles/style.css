@@ -108,7 +108,7 @@
 #share-popup .facebook {
   width: 20px;
   height: 20px;
-  background: url("/images/icon-facebook.svg");
+  background: url("../images/icon-facebook.svg");
   margin-left: 15px;
   margin-right: 18px;
 }
@@ -120,7 +120,7 @@
 #share-popup .twitter {
   width: 20px;
   height: 20px;
-  background: url("/images/icon-twitter.svg");
+  background: url("../images/icon-twitter.svg");
   height: 17px;
   margin-right: 17px;
 }
@@ -132,7 +132,7 @@
 #share-popup .pinterest {
   width: 20px;
   height: 20px;
-  background: url("/images/icon-pinterest.svg");
+  background: url("../images/icon-pinterest.svg");
 }
 
 #share-popup .pinterest:hover {

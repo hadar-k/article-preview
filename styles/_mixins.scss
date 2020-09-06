@@ -20,7 +20,7 @@
 @mixin shareIcon($iconName) {
     width: 20px;
     height: 20px;
-    background: url('/images/icon-' + $iconName + '.svg');
+    background: url('../images/icon-' + $iconName + '.svg');
 }
 
 @mixin share-popup-location($visibility) {
