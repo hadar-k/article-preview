@@ -61,14 +61,23 @@
         @include shareIcon(facebook);
         margin-left: 15px;
         margin-right: 18px;
+        &:hover{
+            cursor: pointer;
+        }
     }
     .twitter{
         @include shareIcon(twitter);
         height: 17px;
         margin-right: 17px;
+        &:hover{
+            cursor: pointer;
+        }
     }
     .pinterest{
         @include shareIcon(pinterest);
+        &:hover{
+            cursor: pointer;
+        }
     }
 
     &::after{
