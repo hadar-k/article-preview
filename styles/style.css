@@ -204,7 +204,7 @@ body {
 .article-component .image {
   width: 50%;
   height: 100%;
-  background: url(/images/drawers.jpg);
+  background: url(../images/drawers.jpg);
   background-position: 0% 0%;
   background-size: cover;
   border-radius: 10px 0px 0px 10px;
@@ -264,7 +264,7 @@ body {
 .article-component .article-content-box .author-box-container .author-box .author-photo {
   width: 40px;
   height: 40px;
-  background: url(/images/avatar-michelle.jpg);
+  background: url(../images/avatar-michelle.jpg);
   background-position: 50% 50%;
   background-size: cover;
   border-radius: 50%;
@@ -304,7 +304,7 @@ body {
 }
 
 .article-component .article-content-box .author-box-container .share:hover #share-icon {
-  background: url(/images/icon-share-active.svg);
+  background: url(../images/icon-share-active.svg);
 }
 
 .article-component .article-content-box .author-box-container .share #share-icon {
@@ -326,11 +326,11 @@ body {
 }
 
 .article-component .article-content-box .author-box-container .share .share-icon-idle {
-  background: url(/images/icon-share.svg);
+  background: url(../images/icon-share.svg);
 }
 
 .article-component .article-content-box .author-box-container .share .share-icon-active {
-  background: url(/images/icon-share-active.svg);
+  background: url(../images/icon-share-active.svg);
 }
 
 @media screen and (max-width: 600px) {
