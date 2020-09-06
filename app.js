@@ -46,6 +46,15 @@ function main(){
             }
         }
     }, false);
+
+    //Prevent 'hide' animation from restarting after resize
+    window.addEventListener("resize", () => {
+        var sharePopup = document.getElementById("share-popup");
+        if (sharePopup.classList.contains("hide")){
+            sharePopup.classList.remove("hide");
+            sharePopup.classList.add("invisible");
+        }
+    });
 }
 
 main();
